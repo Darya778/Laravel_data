@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class UserData extends Model
 {
-    use HasFactory, SoftDeletes;
+    use SoftDeletes;
 
+    protected $table = 'user_data';
     protected $fillable = ['name', 'email'];
+    protected $dates = ['deleted_at'];
 }
 
